@@ -7,8 +7,6 @@ const RenderNotes = ({ onDelete = () => {} }) => {
   const search = useSearchValue();
 
   const renderData = () => {
-    console.log(data);
-
     return data.filter((list) => {
       return (
         list.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -18,6 +16,8 @@ const RenderNotes = ({ onDelete = () => {} }) => {
   };
 
   const renderTime = (time) => {
+    console.log(time);
+
     const options = {
       year: "numeric",
       month: "numeric",
@@ -35,21 +35,23 @@ const RenderNotes = ({ onDelete = () => {} }) => {
   return (
     <section className="notes_list">
       <ul>
-        {renderData().map(({ id, title, time, description }) => (
-          <li key={id}>
-            <div className="card_details">
-              <p>{renderTime(time)}</p>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </div>
-            <i
-              className="material-icons more_vert"
-              onClick={() => onDelete(id)}
-            >
-              delete
-            </i>
-          </li>
-        ))}
+        {data
+          ? renderData().map(({ id, title, time, description }) => (
+              <li key={id}>
+                <div className="card_details">
+                  <p>{renderTime(time)}</p>
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                </div>
+                <i
+                  className="material-icons more_vert"
+                  onClick={() => onDelete(id)}
+                >
+                  delete
+                </i>
+              </li>
+            ))
+          : null}
       </ul>
     </section>
   );

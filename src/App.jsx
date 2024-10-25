@@ -11,7 +11,7 @@ const notes_list = [
   {
     id: 1,
     title: "Meeting",
-    time: "9:00 am",
+    time: new Date().toString(),
     description: "Exceptur sint occaecat cupidatat non proiden.",
     isDone: false,
     category: "office",
@@ -19,7 +19,7 @@ const notes_list = [
   {
     id: 2,
     title: "Salon",
-    time: "9:00 am",
+    time: new Date().toString(),
     description: "Exceptur sint occaecat cupidatat non proiden.",
     isDone: false,
     category: "office",
@@ -27,7 +27,7 @@ const notes_list = [
   {
     id: 3,
     title: "School Pickup",
-    time: "9:00 am",
+    time: new Date().toString(),
     description: "Exceptur sint occaecat cupidatat non proiden.",
     isDone: false,
     category: "office",
@@ -43,10 +43,15 @@ function App() {
   const updateLocalStorage = (updatedList) => {
     localStorage.setItem("notes_list", JSON.stringify(updatedList));
   };
-  useEffect(() => updateLocalStorage(notes_list));
+  useEffect(() => {
+    updateLocalStorage(notesList ? notesList : notes_list);
+    setNotesList(notesList ? notesList : notes_list);
+  });
 
   const handleAddNote = (newNote) => {
-    const updatedList = [...notesList, newNote];
+    const updatedList = notesList
+      ? [...notesList, newNote]
+      : [].concat(newNote);
     setNotesList(updatedList);
     updateLocalStorage(updatedList);
   };
