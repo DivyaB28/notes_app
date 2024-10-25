@@ -43,7 +43,7 @@ function App() {
   const updateLocalStorage = (updatedList) => {
     localStorage.setItem("notes_list", JSON.stringify(updatedList));
   };
-  useEffect(() => updateLocalStorage(notesList || notes_list));
+  useEffect(() => updateLocalStorage(notes_list));
 
   const handleAddNote = (newNote) => {
     const updatedList = [...notesList, newNote];
