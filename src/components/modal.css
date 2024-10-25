@@ -1,0 +1,93 @@
+.modal-overlay {
+  background-color: rgba(99, 96, 96, 0.9);
+
+  inset: 0;
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.modal {
+  background: #ffff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 3rem;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  overflow: hidden;
+}
+.modal-header {
+  display: grid;
+  width: inherit;
+  gap: 2rem;
+  grid-template-columns: 90% 1fr;
+  grid-template-rows: 1fr;
+}
+.modal-title {
+  font-size: 27px;
+  font-weight: 500;
+  justify-self: center;
+}
+
+.close-icon {
+  font-size: 25px;
+  justify-self: end;
+}
+.modal-form > form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+}
+label {
+  display: grid;
+  grid-template-columns: 100dvh;
+  grid-template-rows: repeat(2, 1fr);
+  font-size: 24px;
+  font-weight: 500;
+
+  input,
+  input[type="text"],
+  textarea {
+    display: block;
+    border-bottom: 0.5rem solid #000;
+    padding: 0.5rem;
+    font-size: 20px;
+    background: #e4d5e2;
+    color: #000;
+    font-weight: 400;
+    outline: none;
+    /* min-width: 100dvh; */
+    min-height: 2.6rem;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    color: #0000 !important;
+    cursor: pointer;
+  }
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 0.8rem;
+  width: 10rem;
+  border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  label {
+    grid-template-columns: 1fr;
+  }
+}

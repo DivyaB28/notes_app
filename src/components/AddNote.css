@@ -1,0 +1,16 @@
+.addNote {
+  justify-self: end;
+}
+
+.add_icon {
+  font-size: 24px;
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 50%;
+  background: #ab46c7;
+}
+
+.add_container {
+  justify-self: end;
+  margin: 1em;
+}

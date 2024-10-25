@@ -1,0 +1,76 @@
+main {
+  margin: 2rem;
+  background-color: black;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: minmax(70%, 1fr);
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+.header_wrapper {
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+.searchIcon {
+  font-size: 30px;
+}
+
+.search_container {
+  background: #ffffff;
+  color: black;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: 15px;
+  border-radius: 30px;
+  width: 70%;
+}
+.searchInput {
+  padding-left: 15px;
+  background: #ffffff;
+  color: black;
+  border: none;
+  font-family: inherit;
+  font-size: 1.4rem;
+  width: inherit;
+  outline: none;
+}
+
+.notes_list {
+  width: 70%;
+}
+ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(70%, 1fr);
+  grid-template-rows: auto;
+  gap: 2rem;
+}
+li {
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: space-between;
+  background: #2c2b2b;
+  padding: 2rem;
+}
+.card_details {
+  padding: 0.5rem;
+  text-align: left;
+}
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+}
+.more_vert {
+  font-size: 30px;
+  fill: 0;
+}
